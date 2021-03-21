@@ -114,6 +114,7 @@ function getFirstTrack(data) {
 }
 
 function sanityCheck(data) {
+  data = 'entity' in data ? data.entity : data;
   if (!data || !data.type || !data.name) {
     return Promise.reject(
       new Error("Data doesn't seem to be of the right shape to parse")
